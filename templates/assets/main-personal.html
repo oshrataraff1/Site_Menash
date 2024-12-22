@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Author -->
+    <meta name="author" content="Themes Industry">
+    <!-- description -->
+    <meta name="description" content="MegaOne is a highly creative, modern, visually stunning and Bootstrap responsive multipurpose studio and portfolio HTML5 template with 8 ready home page demos.">
+    <!-- keywords -->
+    <meta name="keywords" content="Creative, modern, clean, bootstrap responsive, html5, css3, portfolio, blog, studio, templates, multipurpose, one page, corporate, start-up, studio, branding, designer, freelancer, carousel, parallax, photography, studio, masonry, grid, faq">
+    <!-- Page Title -->
+    <title>Personal | MegaOne HTML5 Template</title>
+    <!-- Favicon -->
+    <link href="{% static 'personal/img/favicon.ico' %}" rel="icon">
+    <!-- Bundle -->
+    <link href="{% static 'vendor/css/bundle.min.css' %}" rel="stylesheet">
+    <!-- Plugin Css -->
+    <link href="{% static 'vendor/css/LineIcons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/css/revolution-settings.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/css/jquery.fancybox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/css/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/css/swiper.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/css/cubeportfolio.min.css' %}" rel="stylesheet">
+    <!-- Style Sheet -->
+    <link href="{% static 'personal/css/page-animation.css' %}" rel="stylesheet">
+    <link href="{% static 'personal/css/style.css' %}" rel="stylesheet">
+</head>
+
+<body class="signle-layout">
+
+<!-- Preloader -->
+<div class="preloader">
+    <div class="centrize full-width">
+        <div class="vertical-center">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Preloader End -->
+
+{% include "assets/header-personal.html" %}
+
+
+<!-- Site Main -->
+<div class="main-left" id="main">
+
+    {% block mainContent %} 
+    {% endblock mainContent %}
+
+
+</div>
+<!-- Site Main End -->
+
+
+<!-- JavaScript -->
+<script src="{% static 'vendor/js/bundle.min.js' %}"></script>
+<!-- Plugin Js -->
+<script src="{% static 'vendor/js/jquery.appear.js' %}"></script>
+<script src="{% static 'vendor/js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'vendor/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'vendor/js/TweenMax.min.js' %}"></script>
+<script src="{% static 'vendor/js/jquery.cubeportfolio.min.js' %}"></script>
+<!-- REVOLUTION JS FILES -->
+<script src="{% static 'vendor/js/jquery.themepunch.tools.min.js' %}"></script>
+<script src="{% static 'vendor/js/jquery.themepunch.revolution.min.js' %}"></script>
+<!-- SLIDER REVOLUTION EXTENSIONS -->
+<script src="{% static 'vendor/js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'vendor/js/extensions/revolution.extension.video.min.js' %}"></script>
+<!-- google map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJRG4KqGVNvAPY4UcVDLcLNXMXk2ktNfY"></script>
+<script src="{% static 'personal/js/map.js' %}"></script>
+<!-- custom script -->
+<script src="{% static 'personal/js/page-transition.js' %}"></script>
+<script src="{% static 'vendor/js/contact_us.js' %}"></script>
+<script src="{% static 'personal/js/script.js' %}"></script>
+<script src="https://kit.fontawesome.com/7229097855.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,702 @@
+{% extends 'assets/main-personal.html' %} {% load static %} {% load
+custom_filters %} {% block mainContent %}
+
+<!-- Page changer wrapper -->
+<div class="pt-wrapper">
+	<!-- Subpages -->
+	<div class="subpages">
+		<!-- Home -->
+		<section id="home" class="pt-page pt-page-1" data-id="home">
+			<div class="container slider-container">
+				<div class="row align-items-lg-center">
+					<!-- Image Area -->
+					<div class="col-lg-7 order-lg-2">
+						<div class="slider-image">
+							<img src="{% static 'personal/img/girl.png' %}" alt="girl" />
+						</div>
+					</div>
+
+					<!-- Text Area -->
+					<div class="col-lg-4 wow fadeInRight">
+						<!-- Box Area -->
+						<div class="heading-box">
+							<h2>SEO<span class="main-color">H</span></h2>
+							<p>
+								What you <span class="main-color">SEOH</span> is what you get.
+							</p>
+
+							<a
+								href="javascript:void(0);"
+								data-text="Read More"
+								class="btn btn-link"
+								>Read More</a
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- Shapes -->
+				<span class="shape-square"></span>
+				<span class="shape-triangle"></span>
+				<span class="shape-plus"></span>
+				<span class="shape-circle"></span>
+			</div>
+		</section>
+
+		<!-- About -->
+		<section id="about" class="pt-page pt-page-2" data-id="about">
+			<div class="container">
+				<div class="row dot-box">
+					<!-- Heading Area-->
+
+					<div class="col-lg-6 order-lg-2">
+						<div class="row d-flex align-items-md-center feature-cards">
+							{% for service in services %}
+							<div class="p-0 card-conatiner">
+								{% if forloop.first %}
+								<div class="card c1">
+									<div class="feature-item card-body">
+										<span class="fa-stack fa-2x">
+											<i
+												class="fa-solid fa-circle fa-stack-2x"
+												style="color: #ff7300"
+											></i>
+											<i class="{{service.fontawsome_icon}}"></i>
+										</span>
+										<h5 class="title">{{service.title}}</h5>
+										<p>{{service.description}}</p>
+										<a
+											href="javascript:void(0);"
+											class="lni-arrow-right r-icon"
+										></a>
+									</div>
+								</div>
+								{% elif not forloop.first or forloop.last %}
+								<div class="card c2">
+									<div class="feature-item card-body">
+										<span class="fa-stack fa-2x">
+											<i
+												class="fa-solid fa-circle fa-stack-2x"
+												style="color: #ff7300"
+											></i>
+											<i class="{{service.fontawsome_icon}}"></i>
+										</span>
+										<h5 class="title">{{service.title}}</h5>
+										<p>{{service.description}}</p>
+										<a
+											href="javascript:void(0);"
+											class="lni-arrow-right r-icon"
+										></a>
+									</div>
+								</div>
+								{% elif forloop.last %}
+								<div class="card c3">
+									<div class="feature-item card-body">
+										<span class="fa-stack fa-2x">
+											<i
+												class="fa-solid fa-circle fa-stack-2x"
+												style="color: #ff7300"
+											></i>
+											<i class="{{service.fontawsome_icon}}"></i>
+										</span>
+										<h5 class="title">{{service.title}}</h5>
+										<p>{{service.description}}</p>
+										<a
+											href="javascript:void(0);"
+											class="lni-arrow-right r-icon"
+										></a>
+									</div>
+								</div>
+								{% endif %}
+							</div>
+							{% endfor %} 
+                            
+                            
+                            {% comment %}
+							<div class="col-md-6 order-lg-2 p-0">
+								<div class="card c1">
+									<div class="feature-item card-body">
+										<div>bla bla bla</div>
+									</div>
+								</div>
+							</div>
+							{% endcomment %} {% comment %}
+							<div class="col-md-6 order-lg-2 p-0">
+								<div class="card c1">
+									<div class="feature-item card-body">
+										<span class="fa-stack fa-2x">
+											<i
+												class="fa-solid fa-circle fa-stack-2x"
+												style="color: #ff7300"
+											></i>
+											<i class="{{service.fontawsome_icon}}"></i>
+										</span>
+										<h5 class="title">{{service.title}}</h5>
+										<p>dsadasdsaddsadadsdsa</p>
+										<a
+											href="javascript:void(0);"
+											class="lni-arrow-right r-icon"
+										></a>
+									</div>
+								</div>
+								<div class="c2">
+									<div class="feature-item card-body">
+										<span class="fa-stack fa-2x">
+											<i
+												class="fa-solid fa-circle fa-stack-2x"
+												style="color: #ff7300"
+											></i>
+											<i class="{{service.fontawsome_icon}}"></i>
+										</span>
+										<h5 class="title">{{service.title}}</h5>
+										<p>
+											dsadasdsaddsadadsdsadsadasdsaddsadadsdsadsadasdsaddsadadsdsa
+										</p>
+										<a
+											href="javascript:void(0);"
+											class="lni-arrow-right r-icon"
+										></a>
+									</div>
+								</div>
+								<div class="c3">
+									<div class="feature-item card-body">
+										<span class="fa-stack fa-2x">
+											<i
+												class="fa-solid fa-circle fa-stack-2x"
+												style="color: #ff7300"
+											></i>
+											<i class="{{service.fontawsome_icon}}"></i>
+										</span>
+										<h5 class="title">{{service.title}}</h5>
+										<p>
+											dsadasdsaddsadadsdsadsadasdsaddsadadsdsadsadasdsaddsadadsdsa
+										</p>
+										<a
+											href="javascript:void(0);"
+											class="lni-arrow-right r-icon"
+										></a>
+									</div>
+								</div>
+							</div>
+							{% endcomment %}
+
+							<div class="feature-items-buttons">
+								<div class="prev">Previous</div>
+								<div class="next">Next</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-6 order-lg-2">
+						<div class="heading-area pl-lg-4 p-0">
+							<h6 class="sub-title main-color">Basic info about componay</h6>
+							<h2 class="title">Digital Creator & Strategists</h2>
+							<p class="paragraph">
+								There are many variations of passages of Lorem Ipsum available,
+								but the majority have suffered alteration in some form, by
+								injected humour, or randomised words which don't look even
+								slightly believable. <br /><br />
+								If you are going to use a passage of Lorem Ipsum, you need to be
+								sure there isn't anything embarrassing hidden the middle.
+							</p>
+						</div>
+					</div>
+
+					<!-- Features Box-->
+				</div>
+
+				{% comment %}
+				<div class="container">
+					<img
+						src="https://raw.githubusercontent.com/DaftCreation/Card-Slider/master/NEW%20YORK.jpg"
+						alt=""
+						class="c1"
+					/>
+					<img
+						src="https://raw.githubusercontent.com/DaftCreation/Card-Slider/master/PARIS.jpg"
+						alt=""
+						class="c2"
+					/>
+					<img
+						src="https://raw.githubusercontent.com/DaftCreation/Card-Slider/master/AGRA.jpg"
+						alt=""
+						class="c3"
+					/>
+				</div>
+				<div class="prev">Previous</div>
+				<div class="next">Next</div>
+			</div>
+			{% endcomment %}
+		</section>
+
+		<!-- Services -->
+		<section id="services" class="pt-page pt-page-3" data-id="services">
+			<div class="container">
+				<div class="row align-items-lg-center">
+					<!-- Features Box-->
+					<div class="col-lg-5 pr-lg-5">
+						<div class="heading-area">
+							<h6 class="sub-title main-color">45+ Year Of Experience</h6>
+							<h2 class="title">Our Services & Skills</h2>
+						</div>
+						<!-- Progress Bar -->
+						<ul class="services-skill text-left">
+							<!--Progress Item-->
+							<li class="progress-item">
+								<h6>
+									Development<span class="float-right"
+										><b class="count">80</b>%</span
+									>
+								</h6>
+								<div class="progress">
+									<span
+										class="progress-bar"
+										role="progressbar"
+										aria-valuenow="80"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></span>
+								</div>
+							</li>
+							<!--Progress Item-->
+							<li class="progress-item">
+								<h6>
+									Development<span class="float-right"
+										><b class="count">80</b>%</span
+									>
+								</h6>
+								<div class="progress">
+									<span
+										class="progress-bar"
+										role="progressbar"
+										aria-valuenow="80"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></span>
+								</div>
+							</li>
+							<!--Progress Item-->
+							<li class="progress-item">
+								<h6>
+									Web Design<span class="float-right"
+										><b class="count">75</b>%</span
+									>
+								</h6>
+								<div class="progress">
+									<span
+										class="progress-bar"
+										role="progressbar"
+										aria-valuenow="75"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></span>
+								</div>
+							</li>
+							<!--Progress Item-->
+							<li class="progress-item">
+								<h6>
+									UI / UX Design<span class="float-right"
+										><b class="count">75</b>%</span
+									>
+								</h6>
+								<div class="progress">
+									<span
+										class="progress-bar"
+										role="progressbar"
+										aria-valuenow="75"
+										aria-valuemin="0"
+										aria-valuemax="100"
+									></span>
+								</div>
+							</li>
+						</ul>
+
+						<!--Counters Area-->
+						<div class="counter-area">
+							<!-- Counter Item-->
+							<div class="counters">
+								<i class="lni-apartment c-icon"></i>
+								<!-- Content -->
+								<div class="content">
+									<h4 class="m-0"><span class="count">35</span>M</h4>
+									<p>Customer</p>
+								</div>
+							</div>
+							<!-- Counter Item-->
+							<div class="counters">
+								<i class="lni-calculator c-icon"></i>
+								<!-- Content -->
+								<div class="content">
+									<h4 class="m-0"><span class="count">70</span>K</h4>
+									<p>Projects</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Heading Area-->
+					<div class="col-lg-7">
+						<div class="services-about">
+							<img
+								class="service-image"
+								src="{% static 'personal/img/service-image.jpg' %}"
+								alt="image"
+							/>
+							<div class="content">
+								<p>
+									Any desktop publishing packages and web page is a editors now
+									use Lorem Ipsum as their default model text, and a search for
+									their infancy. <br /><br />
+									any desktop publishing packages and web page editors now use.
+								</p>
+
+								<h5 class="mb-1">Harry Watson</h5>
+								<span>CEO, Abacus Studio</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Portfolio -->
+		<section id="portfolio" class="pt-page pt-page-4" data-id="portfolio">
+			<div class="container">
+				<div class="row align-items-lg-center">
+					<!-- Portfolio Box-->
+					<div class="col-lg-12">
+						<!--Portfolio Items-->
+						<div id="js-grid-mosaic-flat" class="cbp cbp-l-grid-mosaic-flat">
+							<!-- Item -->
+							<div class="cbp-item">
+								<a
+									href="{% static 'personal/img/port-1.jpg' %}"
+									class="cbp-caption cbp-lightbox"
+								>
+									<div class="cbp-caption-defaultWrap">
+										<img
+											src="{% static 'personal/img/port-1.jpg' %}"
+											alt="port-1"
+										/>
+									</div>
+									<div class="cbp-caption-activeWrap">
+										<i class="lni-arrow-right p-icon"></i>
+										<div class="port-content">
+											<p class="mb-1 main-color">Elegent | Images</p>
+											<h5>Latest Work</h5>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<div class="cbp-item">
+								<a
+									href="{% static 'personal/img/port-2.jpg' %}"
+									class="cbp-caption cbp-lightbox"
+								>
+									<div class="cbp-caption-defaultWrap">
+										<img
+											src="{% static 'personal/img/port-2.jpg' %}"
+											alt="port-1"
+										/>
+									</div>
+									<div class="cbp-caption-activeWrap">
+										<i class="lni-arrow-right p-icon"></i>
+										<div class="port-content">
+											<p class="mb-1 main-color">Elegent | Images</p>
+											<h5>Latest Work</h5>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<div class="cbp-item">
+								<a
+									href="{% static 'personal/img/port-3.jpg' %}"
+									class="cbp-caption cbp-lightbox"
+								>
+									<div class="cbp-caption-defaultWrap">
+										<img
+											src="{% static 'personal/img/port-3.jpg' %}"
+											alt="port-1"
+										/>
+									</div>
+									<div class="cbp-caption-activeWrap">
+										<i class="lni-arrow-right p-icon"></i>
+										<div class="port-content">
+											<p class="mb-1 main-color">Elegent | Images</p>
+											<h5>Latest Work</h5>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<div class="cbp-item">
+								<a
+									href="{% static 'personal/img/port-4.jpg' %}"
+									class="cbp-caption cbp-lightbox"
+								>
+									<div class="cbp-caption-defaultWrap">
+										<img
+											src="{% static 'personal/img/port-4.jpg' %}"
+											alt="port-1"
+										/>
+									</div>
+									<div class="cbp-caption-activeWrap">
+										<i class="lni-arrow-right p-icon"></i>
+										<div class="port-content">
+											<p class="mb-1 main-color">Elegent | Images</p>
+											<h5>Latest Work</h5>
+										</div>
+									</div>
+								</a>
+							</div>
+							<!-- Item -->
+							<div class="cbp-item">
+								<a
+									href="{% static 'personal/img/port-5.jpg' %}"
+									class="cbp-caption cbp-lightbox"
+								>
+									<div class="cbp-caption-defaultWrap">
+										<img
+											src="{% static 'personal/img/port-5.jpg' %}"
+											alt="port-1"
+										/>
+									</div>
+									<div class="cbp-caption-activeWrap">
+										<i class="lni-arrow-right p-icon"></i>
+										<div class="port-content">
+											<p class="mb-1 main-color">Elegent | Images</p>
+											<h5>Latest Work</h5>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Clients -->
+		<section id="clients" class="pt-page pt-page-5" data-id="clients">
+			<div class="container">
+				<div class="row d-flex align-content-lg-center min-height-100vh">
+					<!-- Features Box-->
+					<div class="col-lg-4 pr-lg-5 p-0">
+						<div class="heading-area">
+							<h6 class="sub-title main-color">What Client Says About us</h6>
+							<h2 class="title">Our Clients & Reviews</h2>
+							<p class="paragraph">
+								There are many variations of passages of Lorem Ipsum available,
+								but the majority.
+							</p>
+						</div>
+						<div id="client-nav"></div>
+					</div>
+
+					<!-- Client Area-->
+					<div class="col-lg-8">
+						<div id="owl-client" class="owl-carousel owl-theme">
+							<!--Items-->
+							<div class="client-box">
+								<i class="lni-quotation q-icon"></i>
+								<p>
+									There are many variations of passages of Lorem Ipsum availa
+									ble, but the majority There are many variations of passages of
+									Lorem Ipsum availa ble.
+								</p>
+
+								<div class="client-img">
+									<img
+										src="{% static 'personal/img/avatar-1.png' %}"
+										alt="client"
+									/>
+								</div>
+								<h5 class="client-name mb-0">Harley Klien</h5>
+								<span class="client-designation">CEO, Abacus Inc</span>
+							</div>
+							<!--Items-->
+							<div class="client-box">
+								<i class="lni-quotation q-icon"></i>
+								<p>
+									There are many variations of passages of Lorem Ipsum availa
+									ble, but the majority There are many variations of passages of
+									Lorem Ipsum availa ble.
+								</p>
+
+								<div class="client-img">
+									<img
+										src="{% static 'personal/img/avatar-2.png' %}"
+										alt="client"
+									/>
+								</div>
+								<h5 class="client-name mb-0">David Jhon</h5>
+								<span class="client-designation">Marketing Lead</span>
+							</div>
+							<!--Items-->
+							<div class="client-box">
+								<i class="lni-quotation q-icon"></i>
+								<p>
+									There are many variations of passages of Lorem Ipsum availa
+									ble, but the majority There are many variations of passages of
+									Lorem Ipsum availa ble.
+								</p>
+
+								<div class="client-img">
+									<img
+										src="{% static 'personal/img/avatar-3.png' %}"
+										alt="client"
+									/>
+								</div>
+								<h5 class="client-name mb-0">Jhon Walkin</h5>
+								<span class="client-designation">General Manager</span>
+							</div>
+						</div>
+					</div>
+
+					<!--Partner Slider-->
+					<div class="owl-carousel partners-slider">
+						<div class="logo-item">
+							<img
+								alt="client-logo"
+								src="{% static 'personal/img/client-1.png' %}"
+							/>
+						</div>
+						<div class="logo-item">
+							<img
+								alt="client-logo"
+								src="{% static 'personal/img/client-2.png' %}"
+							/>
+						</div>
+						<div class="logo-item">
+							<img
+								alt="client-logo"
+								src="{% static 'personal/img/client-3.png' %}"
+							/>
+						</div>
+						<div class="logo-item">
+							<img
+								alt="client-logo"
+								src="{% static 'personal/img/client-4.png' %}"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Contacts -->
+		<section id="contact" class="pt-page pt-page-6" data-id="contact">
+			<div class="container">
+				<div class="row align-items-lg-center">
+					<!--Form area-->
+					<div class="col-lg-6 pr-lg-5">
+						<div class="heading-area">
+							<h6 class="sub-title main-color">Have any Question ?</h6>
+							<h2 class="title">Let's Get In Touch</h2>
+						</div>
+						<!--Contact Form-->
+						<form class="contact-form" id="contact-form-data">
+							<div class="row">
+								<div class="col-sm-12" id="result"></div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input
+											class="form-control"
+											type="text"
+											placeholder="Name"
+											required=""
+											id="your_name"
+											name="userName"
+										/>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input
+											class="form-control"
+											type="email"
+											placeholder="Email"
+											required=""
+											id="your_email"
+											name="userEmail"
+										/>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<input
+									class="form-control"
+									type="text"
+									placeholder="Subject"
+									required=""
+									id="your_subject"
+									name="userSubject"
+								/>
+							</div>
+
+							<div class="form-group">
+								<textarea
+									class="form-control"
+									placeholder="Message"
+									id="message"
+									name="userMessage"
+								></textarea>
+							</div>
+
+							<!--Button-->
+							<a
+								href="javascript:void(0);"
+								id="submit_btn"
+								class="btn btn-large btn-rounded btn-green d-block mt-4 contact_btn"
+								><i
+									class="fa fa-spinner fa-spin mr-2 d-none"
+									aria-hidden="true"
+								></i
+								>Send Message</a
+							>
+						</form>
+
+						<!-- Address -->
+						<ul class="address-item">
+							<!--item-->
+							<li class="w-100 mb-4">
+								<i class="lni-apartment main-color"></i>
+								<div class="content">
+									<h6 class="main-color m-0">Address</h6>
+									<p>Come visit us: {{location}}</p>
+								</div>
+							</li>
+							<!--item-->
+							<li class="pr-2">
+								<i class="lni-comment-reply main-color"></i>
+								<div class="content">
+									<h6 class="main-color m-0">Email:</h6>
+									<p><a href="mailto:{{email}}">{{email}}</a></p>
+								</div>
+							</li>
+							<!--item-->
+							<li>
+								<i class="lni-phone-handset main-color"></i>
+								<div class="content">
+									<h6 class="main-color m-0">Phone Number</h6>
+									<p><a href="tel:{{phone}}">{{phone}}</a></p>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+					<!--map area-->
+					<div class="col-lg-6">
+						<div class="map-half bg-map" id="map"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- End of Home Subpage -->
+</div>
+
+{% endblock mainContent %}
