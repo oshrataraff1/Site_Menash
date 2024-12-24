@@ -1,5 +1,5 @@
 from django.contrib import admin
-from firstapp.models import GeneralInfo, Service, Testimonial
+from firstapp.models import GeneralInfo, Service, Testimonial, FrequentlyAskedQuestion
 
 # Register your models here.
 
@@ -59,3 +59,14 @@ class TestimonialAdmin(admin.ModelAdmin):
         return '*' * obj.rating_count
     
     display_rating_count.short_description = 'Rating'
+    
+
+
+@admin.register(FrequentlyAskedQuestion)
+class FrequentlyAskedQuestionAdmin(admin.ModelAdmin):
+    
+    list_display = [
+        'question',
+        'answer',
+        ]
+    
