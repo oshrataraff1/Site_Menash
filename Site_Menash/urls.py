@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from firstapp.views import index, index_personal, contact_form, blog_deatail, blogs
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,8 @@ urlpatterns = [
     path('contact', contact_form, name= 'contact_form' ),
     path('blog-deatail/<blog_id>', blog_deatail, name='blog_deatail'),
     path('blogs/', blogs, name='blogs'),
+    path(
+        "robots.txt",
+        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
+    ),
 ]
