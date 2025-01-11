@@ -1,4 +1,6 @@
+from django.utils import timezone
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -60,3 +62,44 @@ class FrequentlyAskedQuestion(models.Model):
     def __str__(self):
         return self.question
     
+class ContactFormLog(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    action_time = models.DateTimeField(null=True, blank=True)
+    is_success = models.BooleanField(default=False)
+    is_erorr = models.BooleanField(default=False)
+    erorr_message = models.TextField(null=True, blank=True)
+    
+    def __str__(self):
+        return self.email
+    
+    
+class Author(models.Model):
+    
+    author_pic = models.CharField(max_length=255, null=True, blank=True)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50, null=True, blank=True)
+    country = models.CharField(max_length=50)
+    joined_at = models.DateTimeField(null=True, blank=True)
+    
+    
+    def __str__(self):
+        return self.first_name
+            
+    
+class Blog(models.Model):
+    blog_image = models.CharField(max_length=255, null=True, blank=True)
+    category = models.CharField(max_length=255, null=True, blank=True)
+    title = models.CharField(max_length=255)
+    author = models.ForeignKey(Author, on_delete=models.PROTECT)
+    #on_delete=models.CASCADE - if deleting the author, django will auto delete the author's blogs
+    #on_delete=models.PROTECT - when trying to delete the author, Django will not allow it if the author has blogs
+    #on_delete=models.SET_NULL - if deleting the author, django will make the author column as blank (requires to have the null=True & blank=True attributes)
+    created_at = models.DateTimeField(default=timezone.now)
+    content = RichTextField() # models.TextField()
+    
+    def __str__(self):
+        return self.title
+       

@@ -1,0 +1,86 @@
+{% extends 'assets/main.html' %}
+{% load static %}
+
+{% block mainContent %} 
+
+
+<!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="page-header d-flex align-items-center" style="background-image: url('');">
+        <div class="container position-relative">
+          <div class="row d-flex justify-content-center">
+            <div class="col-lg-6 text-center">
+              <h2>Blog</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <div class="container">
+          <ol>
+            <li><a href="{% url 'app' %}">Home</a></li>
+            <li>Blog</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4 posts-list">
+            {% for blog in page_obj %}
+                <div class="col-xl-4 col-md-6">
+                    <article>
+                        <div class="post-img">
+                            {% if "http" in blog.blog_image %}
+                                <img src="{{blog.blog_image}}" class="img-fluid" alt="blog image">
+                            {% else %}
+                                <img src="{% static blog.blog_image %}" class="img-fluid" alt="blog image">
+                            {% endif %}
+                        </div>
+                        <p class="post-category">{{blog.category}}</p>
+                        <h2 class="title">
+                            <a href="{% url 'blog_deatail' blog.id %}">{{blog.title}}</a>
+                        </h2>
+                        <div class="d-flex align-items-center">
+                            {% if "http" in blog.author.author_pic %}
+                                <img src="{{blog.author.author_pic}}" class="img-fluid post-author-img flex-shrink-0" alt="author image">
+                            {% else %}
+                                <img src="{% static blog.author.author_pic %}" class="img-fluid post-author-img flex-shrink-0" alt="author image">
+                            {% endif %}
+                            <div class="post-meta">
+                            <p class="post-author-list">{{blog.author.first_name}} {{blog.author.last_name}}</p>
+                            <p class="post-date">
+                                <time datetime="2022-01-01">{{blog.created_at | date:"M j, Y"}}</time>
+                            </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div><!-- End post list item -->
+                {% if page_obj.has_next and forloop.last %}
+                    <span hx-get="?page={{ page_obj.next_page_number }}"   
+                    hx-trigger="intersect"                           
+                    hx-target=".posts-list"                          
+                    hx-swap="beforeend"                             
+                    hx-select=".col-xl-4, span">
+                    </span>
+                {% endif %}
+            {% endfor %}
+
+        </div><!-- End blog posts list -->
+
+        {% comment %} <div class="blog-pagination">
+          <ul class="justify-content-center">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+          </ul>
+        </div><!-- End blog pagination --> {% endcomment %}
+
+      </div>
+    </section><!-- End Blog Section -->
+
+{% endblock mainContent %}

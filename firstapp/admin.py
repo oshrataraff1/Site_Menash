@@ -1,5 +1,5 @@
 from django.contrib import admin
-from firstapp.models import GeneralInfo, Service, Testimonial, FrequentlyAskedQuestion
+from firstapp.models import GeneralInfo, Service, Testimonial, FrequentlyAskedQuestion, ContactFormLog, Blog, Author
 
 # Register your models here.
 
@@ -70,3 +70,46 @@ class FrequentlyAskedQuestionAdmin(admin.ModelAdmin):
         'answer',
         ]
     
+
+@admin.register(ContactFormLog)
+class ContactFormLogAdmin(admin.ModelAdmin):
+    
+    list_display = [
+        'email',
+        'is_success',
+        'is_erorr',
+        'action_time',
+        ]
+    
+    # show to disable add permission
+    def has_add_permission(self, request, obj=None):
+        return False
+    
+    # show to disable update permission
+    def has_change_permission(self, request, obj=None):
+        return False
+    
+    # show to disable delete permission
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    
+    list_display = [
+        'author',
+        'category',
+        'title',
+        'blog_image',
+        'created_at',
+        ]
+
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    
+    list_display = [
+        'first_name',
+        'last_name',
+        ]
