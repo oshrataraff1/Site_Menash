@@ -20,9 +20,9 @@ from firstapp.views import index, index_personal, contact_form, blog_deatail, bl
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('app/', index, name = 'app'),
-    path('', index_personal, name='home'),
+    path('editorlogin1/', admin.site.urls),
+    path('', index, name = 'app'),
+    path('app/', index_personal, name='home'),
     path('contact', contact_form, name= 'contact_form' ),
     path('blog-deatail/<blog_id>', blog_deatail, name='blog_deatail'),
     path('blogs/', blogs, name='blogs'),
